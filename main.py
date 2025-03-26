@@ -87,7 +87,7 @@ def validate_and_enhance_response(answer, sources):
     return enhanced_response
 
 def main():
-    st.set_page_config(page_title="💬 Ask CODI 2.0", layout="wide")
+    st.set_page_config(page_title="💬 Ask YODI", layout="wide")
 
     st.markdown("""
         🔬 Proof-of-Concept (POC):
@@ -101,7 +101,7 @@ def main():
 
     rag_chain = create_rag_chain(vector_store)
 
-    st.title("💬 CODI 2.0")
+    st.title("💬 YODI")
 
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = []
@@ -114,7 +114,7 @@ def main():
         rag_chain.memory.clear()
         st.rerun()
 
-    query = st.text_input("🔍 Ask CODI:", key="query")
+    query = st.text_input("🔍 Ask YODI:", key="query")
 
     if query.strip():
         with st.spinner("🔎 Searching and Validating..."):
